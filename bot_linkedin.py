@@ -3,8 +3,8 @@ import random
 from selenium import webdriver
 
 #Parametros para preenchimento
-mail = "email"
-key = "senha"
+mail = "xxxxxxx"
+key = "xxxxxx"
 search_param = "Python"
 pages_upto = 3
 
@@ -35,7 +35,7 @@ for page in range(1, pages_upto):
     time.sleep(random.randint(1, 5))
 
     buttons = browser.find_elements_by_tag_name("button")
-    connect_buttons = [btn for btn in buttons if btn.text == "data-test-reusable-search-primary-action"]
+    connect_buttons = ([btn for btn in buttons if btn.text == "data-test-reusable-search-primary-action"].click()) #não estou conseguindo clicar no botão conectar
     
     counter = 0
     for btn in connect_buttons:
